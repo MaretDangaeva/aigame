@@ -50,3 +50,11 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Check that the live site and images are reachable
+        run: |
+          for path in "" "script.js" "assets/real_cat.jpg" "assets/ai_cat_rocket.svg"; do
+            url="https://maretdangaeva.github.io/aigame/${path}"
+            echo "Checking ${url}"
+            curl --fail --location --silent --show-error --retry 5 --retry-delay 3 --retry-all-errors --max-time 30 --output /dev/null "${url}"
+          done
+          echo "PASS: website, game script, photograph and AI illustration are reachable"
