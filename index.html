@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f9f8ff" />
+  <meta name="description" content="НейроКвест с кошечкой Луней: 6 увлекательных миссий об искусственном интеллекте для детей 1–4 классов." />
+  <title>НейроКвест · Приключение с кошечкой Луней</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-background" aria-hidden="true"><span class="blob blob-a"></span><span class="blob blob-b"></span><span class="blob blob-c"></span></div>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" id="brand-link" aria-label="На старт НейроКвеста"><span class="brand-mark">✦</span><span>Нейро<span class="brand-accent">Квест</span></span></a>
+      <div class="topbar-actions">
+        <span class="tag grade-tag">🎒 1–4 класс</span>
+        <button class="icon-btn" id="sound-toggle" type="button" aria-label="Включить или выключить звук" title="Звук">🔊</button>
+        <button class="icon-btn" id="help-btn" type="button" title="Как играть" aria-label="Как играть">?</button>
+      </div>
+    </header>
+    <main id="app" class="app" tabindex="-1">
+      <section class="loading-card" aria-label="Загрузка игры"><div class="spinner"></div><h1>Зовём кошечку Луню…</h1></section>
+    </main>
+    <footer class="site-footer"><span>С любовью к любопытным умам 🐾</span><button type="button" class="footer-link" id="parent-link">Информация для родителей</button><span>Без регистрации и сбора личных данных</span></footer>
+  </div>
+  <div id="modal-root"></div>
+  <div id="confetti-layer" aria-hidden="true"></div>
+  <div id="status-live" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
