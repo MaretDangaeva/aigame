@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Verify JavaScript syntax
         run: node --check script.js && node --check config.js
+      - name: Test game startup and finale
+        run: node tests/smoke.cjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
