@@ -15,7 +15,7 @@ download() {
   case "$(file -b --mime-type "$target")" in image/jpeg|image/png|image/webp) ;; *) echo "Invalid image data: $target"; exit 1;; esac
 }
 download assets/real_cat.jpg "https://images.unsplash.com/photo-1573865526739-10659fec78a5?fm=jpg&w=700&q=75&fit=crop"
-download assets/real_astronaut.jpg "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?fm=jpg&w=700&q=75&fit=crop"
+download assets/real_astronaut.jpg "https://images.unsplash.com/photo-1447433909565-04bfc496fe73?fm=jpg&w=700&q=75&fit=crop"
 download assets/real_rocket.jpg "https://images.unsplash.com/photo-1517976487492-5750f3195933?fm=jpg&w=700&q=75&fit=crop"
 download assets/real_coffee.jpg "https://images.unsplash.com/photo-1442512595331-e89e73853f31?fm=jpg&w=700&q=75&fit=crop"
 echo "All photographs are available"
