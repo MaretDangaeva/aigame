@@ -7,9 +7,9 @@
   <meta name="description" content="НейроКвест с кошечкой Луней: 6 увлекательных миссий об искусственном интеллекте для детей 1–4 классов." />
   <title>НейроКвест · Приключение с кошечкой Луней</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="config.js" defer></script>
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261102-fix1" />
+  <script src="config.js?v=20261102-fix1" defer></script>
+  <script src="script.js?v=20261102-fix1" defer></script>
 </head>
 <body>
   <div class="site-background" aria-hidden="true"><span class="blob blob-a"></span><span class="blob blob-b"></span><span class="blob blob-c"></span></div>
@@ -31,5 +31,15 @@
   <div id="modal-root"></div>
   <div id="confetti-layer" aria-hidden="true"></div>
   <div id="status-live" class="sr-only" role="status" aria-live="polite"></div>
+  <script>
+    window.addEventListener('load', () => {
+      window.setTimeout(() => {
+        const game = document.getElementById('app');
+        if (game && game.querySelector('.loading-card')) {
+          game.innerHTML = '<section class="game-card" style="text-align:center;padding:42px 22px"><div style="font-size:50px">🐱</div><h1>Луня не смогла загрузить игру</h1><p>Попробуй обновить страницу. Если не получится — попроси взрослого проверить интернет.</p><button class="btn btn-primary" type="button" onclick="location.reload()">🔄 Попробовать снова</button></section>';
+        }
+      }, 8000);
+    });
+  </script>
 </body>
 </html>
