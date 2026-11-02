@@ -33,7 +33,7 @@ function startGame(savedState) {
     }),
     addEventListener() {}
   };
-  const window = { NEUROQUEST_CONFIG: {}, open() {} };
+  const window = { NEUROQUEST_CONFIG: {}, open() {}, scrollTo() {} };
   const context = {
     window, document, URL, console,
     localStorage: {
