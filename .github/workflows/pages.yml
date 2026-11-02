@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -23,6 +23,20 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Restore missing photographs
+        run: bash scripts/fetch-images.sh
+      - name: Preserve photographs in repository
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/real_cat.jpg assets/real_astronaut.jpg assets/real_rocket.jpg assets/real_coffee.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore local photographs used by quiz"
+            git push origin HEAD:main
+          fi
+      - name: Verify all image files
+        run: node tests/assets.cjs
       - name: Verify JavaScript syntax
         run: node --check script.js && node --check config.js
       - name: Test game startup and finale
